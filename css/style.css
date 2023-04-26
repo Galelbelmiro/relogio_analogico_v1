@@ -1,0 +1,117 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  body {
+    background-image: linear-gradient(45deg, rgb(97, 239, 97), rgb(37, 37, 252));
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .relogio {
+    width: 500px;
+    height: 500px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    border: 15px solid black;
+    position: relative;
+  }
+  
+  .relogio .numero {
+    --rotacao: 0;
+  
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform: rotate(var(--rotacao));
+    font-size: 1.8rem;
+    font-weight: 500;
+    padding: 15px;
+  }
+  
+  .relogio .numero.numero-1 {
+    --rotacao: 30deg;
+  }
+  .relogio .numero.numero-2 {
+    --rotacao: 60deg;
+  }
+  .relogio .numero.numero-3 {
+    --rotacao: 90deg;
+  }
+  .relogio .numero.numero-4 {
+    --rotacao: 120deg;
+  }
+  .relogio .numero.numero-5 {
+    --rotacao: 150deg;
+  }
+  .relogio .numero.numero-6 {
+    --rotacao: 180deg;
+  }
+  .relogio .numero.numero-7 {
+    --rotacao: 210deg;
+  }
+  .relogio .numero.numero-8 {
+    --rotacao: 240deg;
+  }
+  .relogio .numero.numero-9 {
+    --rotacao: 270deg;
+  }
+  .relogio .numero.numero-10 {
+    --rotacao: 300deg;
+  }
+  .relogio .numero.numero-11 {
+    --rotacao: 330deg;
+  }
+  
+  /* Ponteiros */
+  .relogio::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    z-index: 11;
+    background-color: black;
+    transform: translate(-50%, -50%);
+  }
+  
+  .relogio .ponteiro {
+    --rotacao: 0;
+  
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    background-color: black;
+    z-index: 10;
+    transform: translateX(-50%) rotate(calc(var(--rotacao) * 1deg));
+    transform-origin: bottom;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  
+  .relogio .ponteiro.segundos {
+    width: 3px;
+    height: 40%;
+    background-color: rgb(0, 255, 26);
+  }
+  
+  .relogio .ponteiro.minutos {
+    width: 7px;
+    height: 35%;
+    background-color: black;
+  }
+  
+  .relogio .ponteiro.horas {
+    width: 10px;
+    height: 25%;
+    background-color: black;
+  }
+  
